@@ -1,8 +1,8 @@
 # Hipster.nvim
 
-**PLEASE NOTE:** Still a work in progress, use if only your sense of style is Cher from Clueless.
+**PLEASE NOTE:** Still a work in progress, use only if your sense of style is Cher from Clueless.
 
-A Neovim theme port of the Visual Studio Code Hipster theme.
+A Neovim theme port of the Visual Studio Code Hipster theme (which was a port of Atom Hipster theme).
 
 ## Introduction
 [Hipster VS Code theme](https://github.com/lalevac/vscode-hipster-theme)
