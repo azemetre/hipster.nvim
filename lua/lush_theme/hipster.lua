@@ -128,23 +128,23 @@ local theme = lush(function()
 
 		Comment({ fg = hsl(210, 9, 52) }), -- Any comment
 
-		-- Constant       { }, -- (*) Any constant
+		Constant({ fg = hsl(5, 74, 62) }), -- (*) Any constant
 		String({ fg = hsl(353, 88, 75) }), --   A string constant: "this is a string"
-		-- Character      { }, --   A character constant: 'c', '\n'
+		Character({ fg = hsl(5, 74, 62) }), --   A character constant: 'c', '\n'
 		Number({ fg = hsl(5, 74, 62) }), --   A number constant: 234, 0xff
 		Boolean({ fg = hsl(355, 100, 70) }), --   A boolean constant: TRUE, false
-		-- Float          { }, --   A floating point constant: 2.3e10
+		Float({ fg = hsl(5, 74, 62) }), --   A floating point constant: 2.3e10
 
-		-- Identifier     { }, -- (*) Any variable name
+		Identifier({ fg = hsl(292, 25, 66) }), -- (*) Any variable name
 		Function({ fg = hsl(5, 74, 62) }), --   Function name (also: methods for classes)
 
-		-- Statement      { }, -- (*) Any statement
-		-- Conditional    { }, --   if, then, else, endif, switch, etc.
-		Repeat({ fg = hsl(292, 25, 66) }), --   for, do, while, etc.
-		-- Label          { }, --   case, default, etc.
-		-- Operator       { }, --   "sizeof", "+", "*", etc.
-		-- Keyword        { }, --   any other keyword
-		-- Exception      { }, --   try, catch, throw
+		Statement({ fg = hsl(292, 25, 66) }), -- (*) Any statement
+		Conditional({ fg = hsl(292, 25, 66) }), --   if, then, else, endif, switch, etc.
+		Repeat({ fg = hsl(168, 76, 42) }), --   for, do, while, etc.
+		Label({ fg = hsl(39, 91, 68) }), --   case, default, etc.
+		Operator({ fg = hsl(0, 0, 93) }), --   "sizeof", "+", "*", etc.
+		Keyword({ fg = hsl(262, 62, 71) }), --   any other keyword
+		Exception({ fg = hsl(168, 76, 42) }), --   try, catch, throw
 
 		-- PreProc        { }, -- (*) Generic Preprocessor
 		-- Include        { }, --   Preprocessor #include
@@ -152,22 +152,22 @@ local theme = lush(function()
 		-- Macro          { }, --   Same as Define
 		-- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
-		-- Type           { }, -- (*) int, long, char, etc.
+		Type({ fg = hsl(194, 35, 76) }), -- (*) int, long, char, etc.
 		StorageClass({ fg = hsl(262, 62, 71) }), --   static, register, volatile, etc.
-		-- Structure      { }, --   struct, union, enum, etc.
-		-- Typedef        { }, --   A typedef
+		Structure({ fg = hsl(39, 91, 68) }), --   struct, union, enum, etc.
+		Typedef({ fg = hsl(39, 91, 68) }), --   A typedef
 
-		-- Special        { }, -- (*) Any special symbol
-		-- SpecialChar    { }, --   Special character in a constant
+		Special({ fg = hsl(197, 100, 77) }), -- (*) Any special symbol
+		SpecialChar({ fg = hsl(168, 76, 42) }), --   Special character in a constant
 		-- Tag            { }, --   You can use CTRL-] on this
-		-- Delimiter      { }, --   Character that needs attention
-		-- SpecialComment { }, --   Special things inside a comment (e.g. '\n')
+		Delimiter({ fg = hsl(39, 91, 68) }), --   Character that needs attention
+		SpecialComment({ fg = hsl(197, 100, 77) }), --   Special things inside a comment (e.g. '\n')
 		Debug({ fg = hsl(275, 72, 65) }), --   Debugging statements
 
-		Underlined({ gui = "underline", fg = hsl(218, 88, 70) }), -- Text that stands out, HTML links
+		Underlined({ gui = "underdot", fg = hsl(218, 88, 70) }), -- Text that stands out, HTML links
 		-- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-		-- Error          { }, -- Any erroneous construct
-		-- Todo           { }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Error({ fg = hsl(350, 100, 66) }), -- Any erroneous construct
+		Todo({ fg = hsl(6, 80, 62) }), -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 		-- These groups are for the native LSP client and diagnostic system. Some
 		-- other LSP clients may use these groups, or use their own. Consult your
@@ -208,10 +208,10 @@ local theme = lush(function()
 		-- See :h nvim-treesitter-highlights, some groups may not be listed, submit a PR fix to lush-template!
 		--
 		-- TSAttribute          { } , -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-		TSBoolean({ fg = hsl(355, 100, 70) }), -- Boolean literals: `True` and `False` in Python.
+		-- TSBoolean({ fg = hsl(355, 100, 70) }), -- Boolean literals: `True` and `False` in Python.
 		-- TSCharacter          { } , -- Character literals: `'a'` in C.
 		-- TSCharacterSpecial   { } , -- Special characters.
-		TSComment({ fg = hsl(210, 9, 52) }), -- Line comments and block comments.
+		-- TSComment({ fg = hsl(210, 9, 52) }), -- Line comments and block comments.
 		-- TSConditional        { } , -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
 		-- TSConstant           { } , -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
 		-- TSConstBuiltin       { } , -- Built-in constant values: `nil` in Lua.
@@ -230,7 +230,7 @@ local theme = lush(function()
 		-- TSKeyword            { } , -- Keywords that don't fit into other categories.
 		-- TSKeywordFunction    { } , -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
 		-- TSKeywordOperator    { } , -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
-		TSKeywordReturn({ fg = hsl(292, 25, 66) }), -- Keywords like `return` and `yield`.
+		-- TSKeywordReturn({ fg = hsl(292, 25, 66) }), -- Keywords like `return` and `yield`.
 		-- TSLabel              { } , -- GOTO labels: `label:` in C, and `::label::` in Lua.
 		-- TSMethod             { } , -- Method calls and definitions.
 		-- TSNamespace          { } , -- Identifiers referring to modules and namespaces.
@@ -244,24 +244,24 @@ local theme = lush(function()
 		TSPunctDelimiter({ fg = hsl(0, 0, 93) }), -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		-- TSPunctBracket       {  fg = hsl(197, 100, 77) } , -- Brackets, braces, parentheses, etc.
 		-- TSPunctSpecial       { } , -- Special punctuation that doesn't fit into the previous categories.
-		TSRepeat({ fg = hsl(292, 25, 66) }), -- Keywords related to loops: `for`, `while`, etc.
-		TSStorageClass({ fg = hsl(262, 62, 71) }), -- Keywords that affect how a variable is stored: `static`, `comptime`, `extern`, etc.
+		-- TSRepeat({ fg = hsl(292, 25, 66) }), -- Keywords related to loops: `for`, `while`, etc.
+		-- TSStorageClass({ fg = hsl(262, 62, 71) }), -- Keywords that affect how a variable is stored: `static`, `comptime`, `extern`, etc.
 		-- TSString             { } , -- String literals.
 		TSStringRegex({ fg = hsl(197, 100, 77) }), -- Regular expression literals.
-		TSStringEscape({ fg = hsl(197, 100, 77) }), -- Escape characters within a string: `\n`, `\t`, etc.
+		TSStringEscape({ fg = hsl(0, 0, 93) }), -- Escape characters within a string: `\n`, `\t`, etc.
 		-- TSStringSpecial      { } , -- Strings with special meaning that don't fit into the previous categories.
 		-- TSSymbol             { } , -- Identifiers referring to symbols or atoms.
 		TSTag({ fg = hsl(355, 100, 70) }), -- Tags like HTML tag names.
 		TSTagAttribute({ fg = hsl(39, 100, 71) }), -- HTML tag attributes.
 		TSTagDelimiter({ fg = hsl(0, 0, 93) }), -- Tag delimiters like `<` `>` `/`.
 		-- TSText               { } , -- Non-structured text. Like text in a markup language.
-		TSStrong({ gui = "bold", fg = hsl(355, 100, 70) }), -- Text to be represented in bold.
+		-- TSStrong({ gui = "bold", fg = hsl(355, 100, 70) }), -- Text to be represented in bold.
 		-- TSEmphasis           { } , -- Text to be represented with emphasis.
-		TSUnderline({ gui = "underline", fg = hsl(218, 88, 70) }), -- Text to be represented with an underline.
-		TSStrike({ gui = "strikethrough" }), -- Strikethrough text.
+		-- TSUnderline({ gui = "underline", fg = hsl(218, 88, 70) }), -- Text to be represented with an underline.
+		-- TSStrike({ gui = "strikethrough" }), -- Strikethrough text.
 		-- TSTitle              { } , -- Text that is part of a title.
 		-- TSLiteral            { } , -- Literal or verbatim text.
-		TSURI({ gui = "underline", fg = hsl(218, 88, 70) }), -- URIs like hyperlinks or email addresses.
+		-- TSURI({ gui = "underline", fg = hsl(218, 88, 70) }), -- URIs like hyperlinks or email addresses.
 		-- TSMath               { } , -- Math environments like LaTeX's `$ ... $`
 		-- TSTextReference      { } , -- Footnotes, text references, citations, etc.
 		-- TSEnvironment        { } , -- Text environments of markup languages.
