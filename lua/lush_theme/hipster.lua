@@ -153,9 +153,9 @@ local theme = lush(function()
 		-- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
 		Type({ fg = hsl(194, 35, 76) }), -- (*) int, long, char, etc.
-		StorageClass({ fg = hsl(262, 62, 71) }), --   static, register, volatile, etc.
+		StorageClass({ fg = hsl(39, 91, 68) }), --   static, register, volatile, etc.
 		Structure({ fg = hsl(39, 91, 68) }), --   struct, union, enum, etc.
-		Typedef({ fg = hsl(39, 91, 68) }), --   A typedef
+		Typedef({ fg = hsl(262, 62, 71) }), --   A typedef
 
 		Special({ fg = hsl(197, 100, 77) }), -- (*) Any special symbol
 		SpecialChar({ fg = hsl(168, 76, 42) }), --   Special character in a constant
@@ -184,9 +184,9 @@ local theme = lush(function()
 		-- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
 		--
 		DiagnosticError({ bg = hsl(6, 80, 62), fg = hsl(0, 0, 0) }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-		DiagnosticWarn({ bg = hsl(6, 80, 62), fg = hsl(39, 61, 50) }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-		DiagnosticInfo({ bg = hsl(6, 80, 62), fg = hsl(218, 72, 65) }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-		DiagnosticHint({ bg = hsl(6, 80, 62), fg = hsl(0, 0, 93) }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline) DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text. DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
+		DiagnosticWarn({ bg = hsl(39, 61, 50), fg = hsl(6, 80, 62) }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+		DiagnosticInfo({ bg = hsl(218, 72, 65), fg = hsl(6, 80, 62) }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+		DiagnosticHint({ bg = hsl(0, 0, 93), fg = hsl(6, 80, 62) }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline) DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text. DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
 		-- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
 		-- DiagnosticVirtualTextHint  { } , -- Used for "Hint" diagnostic virtual text.
 		DiagnosticUnderlineError({ fg = hsl(0, 83, 53) }), -- Used to underline "Error" diagnostics.
