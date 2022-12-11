@@ -45,6 +45,10 @@
 local lush = require("lush")
 local hsl = lush.hsl
 
+-- color palette
+local seaweed = hsl(168, 100, 37)
+local milky = hsl(0, 0, 93)
+
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
@@ -60,7 +64,7 @@ local theme = lush(function()
 		--
 		-- See :h highlight-groups
 		--
-		-- ColorColumn({}), -- Columns set with 'colorcolumn'
+		ColorColumn({ bg = milky.lighten(75) }), -- Columns set with 'colorcolumn'
 		-- Conceal      { }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor({ bg = hsl(177, 100, 24) }), -- Character under the cursor
 		-- lCursor({}), -- Character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -108,13 +112,13 @@ local theme = lush(function()
 		-- StatusLine({}), -- Status line of current window
 		-- StatusLineNC({}), -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		TabLine({ bg = hsl(168, 100, 37) }), -- Tab pages line, not active tab page label
-		TabLineFill({ bg = hsl(168, 100, 37) }), -- Tab pages line, where there are no labels
+		TabLineFill({ bg = hsl(168, 100, 37) }), -- Tab pag206, 36, 30es line, where there are no labels
 		TabLineSel({ bg = hsl(185, 76, 26) }), -- Tab pages line, active tab page label
 		-- Title        { }, -- Titles for output from ":set all", ":autocmd" etc.
 		Visual({ bg = hsl(168, 76, 42), fg = hsl(0, 0, 93) }), -- Visual mode selection
 		-- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		-- WarningMsg   { }, -- Warning messages
-		Whitespace({ fg = hsl(353, 88, 75) }), -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		Whitespace({ fg = hsl(0, 0, 93) }), -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		Winseparator({ bg = hsl(206, 36, 30), fg = hsl(0, 0, 93) }), -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
 		-- WildMenu     { }, -- Current match in 'wildmenu' completion
 
